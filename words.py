@@ -1,3 +1,5 @@
+import random
+
 class Word:
     """ Word and its translation"""
 
@@ -45,3 +47,8 @@ class WordBank:
 
     def get_word(self, index):
         return self.words[index]
+
+    def random_word(self):
+        index = random.randint(0, self.words.size()-1)
+        word = self.remove(index)
+        return word

@@ -37,7 +37,3 @@ class Logic:
                 wrong_answers = []
                 return True
         return False
-
-    def rand_word(self):
-        rand_index = random.randint(0, self.word_list.size())
-        return self.word_list.get_word(rand_index)
