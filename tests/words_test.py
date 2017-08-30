@@ -27,9 +27,9 @@ def words_test():
     assert wb.size() == 1
     wb.add(w2)
     assert wb.size() == 2
-    print(wb.random_word())
+    print(wb.random_word().get_word())
     assert wb.size() == 1
-    print(wb.random_word())
+    print(wb.random_word().get_word())
     assert wb.size() == 0
     
     

@@ -37,7 +37,7 @@ class WordBank:
         self.words.append(word)
 
     def remove(self, index):
-        self.words.pop(index)
+        return self.words.pop(index)
 
     def clear(self):
         self.words = []
@@ -49,6 +49,6 @@ class WordBank:
         return self.words[index]
 
     def random_word(self):
-        index = random.randint(0, self.words.size()-1)
+        index = random.randint(0, len(self.words)-1)
         word = self.remove(index)
         return word
