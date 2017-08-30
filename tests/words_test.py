@@ -1,10 +1,13 @@
 from words import Word, WordBank
 def words_test():
 
-    word = 'trocken'
-    translation = 'sucho'
+    word1 = 'trocken'
+    translation1 = 'sucho'
+    word2 = 'er'
+    translation2 = 'on'
 
-    w1 = Word(word, translation)
+    w1 = Word(word1, translation1)
+    w2 = Word(word2, translation2)
 
     print(w1.get_word())
     print(w1.get_translation())
@@ -21,9 +24,14 @@ def words_test():
 
     wb = WordBank()
     wb.add(w1)
-    print(wb.size())
-    wb.remove(0)
-    print(wb.size())
+    assert wb.size() == 1
+    wb.add(w2)
+    assert wb.size() == 2
+    print(wb.random_word())
+    assert wb.size() == 1
+    print(wb.random_word())
+    assert wb.size() == 0
+    
     
         
     
