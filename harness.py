@@ -20,14 +20,18 @@ class Harness:
         while not self._logic.empty():
             word = self._logic.word_list.random_word()
             print(word.translation)
-            user_input = input('Your Answer: ')
-            if user_input == '0':
-                hints.show_hint(word.hint_info(), word.get_word(), self._language)
-            else:
+            while True:
+                user_input = input('Your Answer: ')
+                if user_input == '0':
+                    h, idx = hints.show_hint(word.hint_info(), word.get_word(), self._language)
+                    word.set_hint(idx)
+                    print(h)
+                    continue
                 if word.match(user_input):
                     print('OK\n')
                 else:
-                    print('Wrong!\n')
+                    print('Wrong! Correct answer: {}\n'.format(word.source))
+                break
 
 
         
