@@ -1,6 +1,4 @@
 from words import Word, WordBank
-import random
-
 
 class Logic:
     def __init__(self):

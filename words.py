@@ -20,6 +20,11 @@ class Word:
     def set_hint(self, hint):
         if hint >= self._hint and hint <= len(self.source):
             self._hint = hint
+
+    def match(self, word):
+        if self.source == word:
+            return True
+        return False
         
     
 

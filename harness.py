@@ -18,13 +18,16 @@ class Harness:
         self._logic.load_file(f)
 
         while not self._logic.empty():
-            word = self._logic.rand_word()
-            answer = word.get_translation()
+            word = self._logic.word_list.random_word()
+            print(word.translation)
             user_input = input('Your Answer: ')
             if user_input == '0':
                 hints.show_hint(word.hint_info(), word.get_word(), self._language)
             else:
-                self._logic.correct(user_input, answer)
+                if word.match(user_input):
+                    print('OK\n')
+                else:
+                    print('Wrong!\n')
 
 
         
