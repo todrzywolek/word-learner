@@ -3,19 +3,18 @@ import hints
 from gui import open_file
 
 
+FILE_OPEN_OPTIONS = dict(defaultextension='.txt',
+                         filetypes=[('text files', '*.txt')],
+                         title='Choose word-list file')
+
 class Harness:
-
-    FILE_OPEN_OPTIONS = dict(defaultextension='.txt',
-                             filetypes=[('text files', '*.txt')],
-                             title='Wybierz plik z listą słówek')
-
     def __init__(self):
         self._logic = Logic()
         self._language = '[GER]'
 
     def start(self):
         print('Program do slowek.\nWybierz plik')
-        f = open_file()
+        f = open_file(FILE_OPEN_OPTIONS)
         self._logic.load_file(f)
 
         while not self._logic.empty():
