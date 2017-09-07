@@ -16,17 +16,6 @@ class Logic:
 
         f.close()
 
-    def check_answer(self, user_input, answer):
-        if user_input == self.word_list.get_word(answer).get_translation():
-            return True
-        return False
-
-    def correct(self, user_input, answer, index):
-        word = self.word_list.remove(index)
-        if not self.check_answer(user_input, answer):
-            self.wrong_answers.add(word)
-            print('Wrong answer!')
-
 
     def empty(self):
         if not self.word_list:
