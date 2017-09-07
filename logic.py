@@ -18,9 +18,9 @@ class Logic:
 
 
     def empty(self):
-        if not self.word_list:
-            if self.wrong_answers:
-                word_list = self.wrong_answers
-                wrong_answers = []
-                return True
+        if len(self.word_list) == len(self.wrong_answers) == 0:
+            return True
+        if len(self.word_list) == 0:
+            self.word_list.set_list(self.wrong_answers)
+            self.wrong_answer.clear()
         return False
